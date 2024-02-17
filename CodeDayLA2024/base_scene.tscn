@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bnipc4lt3b6af"]
+
+[ext_resource type="PackedScene" uid="uid://b6fhwvgbk3xn8" path="res://Player.tscn" id="1_y353s"]
+[ext_resource type="PackedScene" uid="uid://cwdumy82l5nkp" path="res://ball_obstacle.tscn" id="2_e451o"]
+
+[node name="BaseScene" type="Node3D"]
+
+[node name="Player" parent="." instance=ExtResource("1_y353s")]
+
+[node name="Area3D" parent="." instance=ExtResource("2_e451o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -1)
