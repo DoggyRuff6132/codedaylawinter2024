@@ -1,7 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://04qg05plyioc"]
+[gd_scene load_steps=5 format=3 uid="uid://04qg05plyioc"]
 
 [ext_resource type="Script" path="res://Spawner.gd" id="1_rpmq1"]
+[ext_resource type="PackedScene" uid="uid://cwdumy82l5nkp" path="res://ball_obstacle.tscn" id="2_a6tqf"]
+[ext_resource type="Script" path="res://ObstacleWeight.gd" id="3_pmlim"]
+
+[sub_resource type="Resource" id="Resource_jhxpp"]
+script = ExtResource("3_pmlim")
+scene = ExtResource("2_a6tqf")
+weight = 10
 
 [node name="Spawner" type="Node3D"]
 script = ExtResource("1_rpmq1")
-objects = null
+objects = Array[ExtResource("3_pmlim")]([SubResource("Resource_jhxpp")])

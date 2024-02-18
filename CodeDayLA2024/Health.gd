@@ -1,4 +1,5 @@
 extends Node3D
+class_name Health
 
 @export var maxHealth : int = 100
 var currentHealth : int = 100

@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bnipc4lt3b6af"]
+[gd_scene load_steps=6 format=3 uid="uid://bnipc4lt3b6af"]
 
 [ext_resource type="PackedScene" uid="uid://b6fhwvgbk3xn8" path="res://Player.tscn" id="1_y353s"]
 [ext_resource type="PackedScene" uid="uid://cwdumy82l5nkp" path="res://ball_obstacle.tscn" id="2_e451o"]
+[ext_resource type="PackedScene" uid="uid://04qg05plyioc" path="res://spawner.tscn" id="3_a2qr7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4yvj8"]
 size = Vector3(10, 0.1, 30)
@@ -33,3 +34,5 @@ transform = Transform3D(1, 0, 0, 0, 0.914882, 0.403721, 0, -0.403721, 0.914882, 
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.914882, 0.403721, 0, -0.403721, 0.914882, 0, 2.40261, 2.39791)
+
+[node name="Spawner" parent="." instance=ExtResource("3_a2qr7")]

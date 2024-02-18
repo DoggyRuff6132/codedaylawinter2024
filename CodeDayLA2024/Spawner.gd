@@ -2,7 +2,7 @@ extends Node3D
 
 @export var objects : Array[ObstacleWeight]
 var totalWeight = 0
-var timeBetweenSpawns = 2.0
+@export var timeBetweenSpawns = 1.0
 var t_tbs
 
 # Called when the node enters the scene tree for the first time.
@@ -20,12 +20,23 @@ func _process(delta):
 	
 	if t_tbs < 0:
 		var rng = RandomNumberGenerator.new()
-		rng.randi_range(1,totalWeight)
+		
+		var obj = _getObjectWeight(rng.randi_range(1,totalWeight)).instantiate()
+		print(obj)
+		
+		add_child(obj)
+		
+		obj.position = Vector3(rng.randf_range(-5,5),1,-25)
+		
+		t_tbs = timeBetweenSpawns
+		
 
 func _getObjectWeight(weight):
 	var currentWeight = 0
 	
-	for i in range(objects.size()):
-		currentWeight += objects[i].weight
+	for i in objects:
+		currentWeight += i.weight
 		if weight < currentWeight:
-			return objects[i]
+			return i.scene
+	
+	return objects[0].scene
