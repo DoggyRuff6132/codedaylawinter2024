@@ -11,8 +11,7 @@ func _ready():
 	
 	for i in objects:
 		totalWeight += i.weight
-		
-
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -20,9 +19,8 @@ func _process(delta):
 	
 	if t_tbs < 0:
 		var rng = RandomNumberGenerator.new()
-		
-		var obj = _getObjectWeight(rng.randi_range(1,totalWeight)).instantiate()
-		print(obj)
+		var randnum = rng.randi_range(0,totalWeight-1)
+		var obj = _getObjectWeight(randnum).instantiate()
 		
 		add_child(obj)
 		
@@ -38,5 +36,3 @@ func _getObjectWeight(weight):
 		currentWeight += i.weight
 		if weight < currentWeight:
 			return i.scene
-	
-	return objects[0].scene
