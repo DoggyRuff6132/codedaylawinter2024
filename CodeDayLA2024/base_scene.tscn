@@ -27,10 +27,34 @@ mesh = SubResource("BoxMesh_nm4wk")
 skeleton = NodePath("")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.914882, 0.403721, 0, -0.403721, 0.914882, 0, 2.40261, 2.39791)
+transform = Transform3D(1, 0, 0, 0, 0.914882, 0.403721, 0, -0.403721, 0.914882, -0.0226916, 4.68153, 3.46421)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.914882, 0.403721, 0, -0.403721, 0.914882, 0, 2.40261, 2.39791)
 
 [node name="Spawner" parent="." instance=ExtResource("3_a2qr7")]
 timeBetweenSpawns = 0.7
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -5.35463, 4.068, -8.14196)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
+shape = SubResource("BoxShape3D_4yvj8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
+mesh = SubResource("BoxMesh_nm4wk")
+skeleton = NodePath("")
+
+[node name="StaticBody3D3" type="StaticBody3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 5.23324, 4.068, -8.14196)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
+shape = SubResource("BoxShape3D_4yvj8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
+mesh = SubResource("BoxMesh_nm4wk")
+skeleton = NodePath("")
