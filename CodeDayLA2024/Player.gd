@@ -32,5 +32,4 @@ func _physics_process(delta):
 	
 	if position.z > 2:
 		$Health.Die()
-	
 	move_and_slide()
