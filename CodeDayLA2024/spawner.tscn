@@ -1,7 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://04qg05plyioc"]
+[gd_scene load_steps=7 format=3 uid="uid://04qg05plyioc"]
 
 [ext_resource type="Script" path="res://Spawner.gd" id="1_rpmq1"]
+[ext_resource type="PackedScene" uid="uid://cwdumy82l5nkp" path="res://Obstacles/ball_obstacle.tscn" id="2_433qw"]
+[ext_resource type="Script" path="res://Obstacles/ObstacleWeight.gd" id="3_n5jdq"]
+[ext_resource type="PackedScene" uid="uid://d2o5mes2hlee3" path="res://Obstacles/rectangle_obstacle.tscn" id="4_vpm5u"]
+
+[sub_resource type="Resource" id="Resource_jpsno"]
+script = ExtResource("3_n5jdq")
+scene = ExtResource("2_433qw")
+weight = 10
+
+[sub_resource type="Resource" id="Resource_na63f"]
+script = ExtResource("3_n5jdq")
+scene = ExtResource("4_vpm5u")
+weight = 1
 
 [node name="Spawner" type="Node3D"]
 script = ExtResource("1_rpmq1")
-objects = null
+objects = Array[ExtResource("3_n5jdq")]([SubResource("Resource_jpsno"), SubResource("Resource_na63f")])
+timeBetweenSpawns = 0.0

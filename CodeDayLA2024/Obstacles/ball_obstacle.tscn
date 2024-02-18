@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://cwdumy82l5nkp"]
+
+[ext_resource type="Script" path="res://Obstacles/obstacle.gd" id="1_ln1ob"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_8cgyk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rg0s8"]
+albedo_color = Color(0.278431, 0.380392, 0.227451, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_ju24w"]
+material = SubResource("StandardMaterial3D_rg0s8")
+
+[node name="BallObstacle" type="StaticBody3D"]
+script = ExtResource("1_ln1ob")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_8cgyk")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_ju24w")

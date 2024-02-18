@@ -1,6 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://b6fhwvgbk3xn8"]
+[gd_scene load_steps=7 format=3 uid="uid://b6fhwvgbk3xn8"]
 
 [ext_resource type="Script" path="res://Health.gd" id="1_hal5y"]
+[ext_resource type="Script" path="res://Player.gd" id="1_ysvpv"]
+[ext_resource type="AudioStream" uid="uid://d28nced1t53oi" path="res://Audio/youlose.ogg" id="3_3s1xl"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nqfmq"]
 
@@ -13,12 +15,17 @@ material = SubResource("StandardMaterial3D_8j0js")
 [node name="Player" type="CharacterBody3D"]
 collision_layer = 5
 collision_mask = 7
+script = ExtResource("1_ysvpv")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_nqfmq")
 
 [node name="Health" type="Node3D" parent="."]
 script = ExtResource("1_hal5y")
+
+[node name="dieSound" type="AudioStreamPlayer3D" parent="Health"]
+stream = ExtResource("3_3s1xl")
+attenuation_model = 3
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_ltiep")
