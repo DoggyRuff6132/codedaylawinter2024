@@ -4,8 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://cwdumy82l5nkp" path="res://ball_obstacle.tscn" id="2_e451o"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4yvj8"]
+size = Vector3(20, 0.1, 3)
 
 [sub_resource type="BoxMesh" id="BoxMesh_nm4wk"]
+size = Vector3(20, 0.1, 3)
 
 [node name="BaseScene" type="Node3D"]
 
@@ -18,9 +20,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -1)
 [node name="Area3D2" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D2"]
-transform = Transform3D(16.9011, 0, 0, 0, 0.0808969, 0, 0, 0, 1.56083, 0, 0, 0)
 shape = SubResource("BoxShape3D_4yvj8")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D2"]
-transform = Transform3D(16.9011, 0, 0, 0, 0.0808969, 0, 0, 0, 1.56083, 0, 0, 0)
 mesh = SubResource("BoxMesh_nm4wk")
