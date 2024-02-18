@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b6fhwvgbk3xn8"]
+[gd_scene load_steps=8 format=3 uid="uid://b6fhwvgbk3xn8"]
 
 [ext_resource type="Script" path="res://Health.gd" id="1_hal5y"]
 [ext_resource type="Script" path="res://Player.gd" id="1_ysvpv"]
@@ -11,6 +11,10 @@ albedo_color = Color(1, 0.266667, 0.529412, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_ltiep"]
 material = SubResource("StandardMaterial3D_8j0js")
+
+[sub_resource type="Theme" id="Theme_hrr1h"]
+default_base_scale = 0.9
+default_font_size = 190
 
 [node name="Player" type="CharacterBody3D"]
 collision_layer = 5
@@ -29,3 +33,21 @@ attenuation_model = 3
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_ltiep")
+
+[node name="Label" type="Label" parent="."]
+<<<<<<< Updated upstream
+offset_left = 480.0
+offset_top = 320.0
+offset_right = 567.0
+offset_bottom = 580.0
+size_flags_vertical = 6
+theme = SubResource("Theme_hrr1h")
+theme_type_variation = &"HeaderLarge"
+=======
+offset_left = 500.0
+offset_top = 300.0
+offset_right = 620.0
+offset_bottom = 350.0
+>>>>>>> Stashed changes
+text = "
+"

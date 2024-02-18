@@ -6,7 +6,7 @@ const JUMP_VELOCITY = 4.5
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
-
+var lifecount=3
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -28,9 +28,22 @@ func _physics_process(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
+		
+	if lifecount == 0:
+		gameover()
+	elif position.z > 2:
+		respawn()
 
-	
-	if position.z > 2:
-		$Health.Die()
-	
 	move_and_slide()
+	
+func gameover():
+	$Label.set_text("Game Over")
+	
+	$Health.Die()
+	position.y= -1
+func respawn():
+	print("resapwning!")
+	position.z = -1
+	lifecount-=1
+	
+

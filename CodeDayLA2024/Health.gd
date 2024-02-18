@@ -11,7 +11,6 @@ func _ready():
 	currentHealth = maxHealth
 
 func _process(delta):
-	print(currentHealth)
 	if currentHealth < 0:
 		Die()
 
