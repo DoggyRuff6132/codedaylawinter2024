@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bv2o1wxfrkugs"]
+
+[ext_resource type="Script" path="res://Obstacles/moving_obstacle.gd" id="1_hxrx4"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_avcnp"]
+height = 0.5
+radius = 1.0
+
+[sub_resource type="TorusMesh" id="TorusMesh_sixyu"]
+
+[node name="MovingObstacle" type="StaticBody3D"]
+script = ExtResource("1_hxrx4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CylinderShape3D_avcnp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("TorusMesh_sixyu")

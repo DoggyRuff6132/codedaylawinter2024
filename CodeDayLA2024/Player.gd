@@ -8,7 +8,16 @@ const JUMP_VELOCITY = 4.5
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var lifecount=3
 
+var gameTime = 0.0
+var lost = false
+
+func _ready():
+	_updateLifeCounter()
+
+
 func _physics_process(delta):
+	if !lost:
+		gameTime += delta
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
@@ -37,13 +46,20 @@ func _physics_process(delta):
 	move_and_slide()
 	
 func gameover():
-	$Label.set_text("Game Over")
+	$GameOverLabel.set_text("Game Over at " + str(snappedf(gameTime,0.001)))
 	
 	$Health.Die()
+	lost = true
 	position.y= -1
+	
 func respawn():
 	print("resapwning!")
-	position.z = -1
+	position.z = -1.0
 	lifecount-=1
+	_updateLifeCounter()
+	
+func _updateLifeCounter():
+	$LifeCounter.set_text("Lives: " + str(lifecount))
+
 	
 
