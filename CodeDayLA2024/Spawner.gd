@@ -19,12 +19,13 @@ func _process(delta):
 	t_tbs -= delta
 	
 	if t_tbs < 0:
-		pass
+		var rng = RandomNumberGenerator.new()
+		rng.randi_range(1,totalWeight)
 
 func _getObjectWeight(weight):
 	var currentWeight = 0
 	
-	for i in range(index):
+	for i in range(objects.size()):
 		currentWeight += objects[i].weight
 		if weight < currentWeight:
 			return objects[i]
