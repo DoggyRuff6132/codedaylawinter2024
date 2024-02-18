@@ -4,3 +4,4 @@
 
 [node name="Spawner" type="Node3D"]
 script = ExtResource("1_rpmq1")
+objects = null

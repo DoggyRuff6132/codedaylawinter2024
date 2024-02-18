@@ -21,8 +21,10 @@ func _process(delta):
 	if t_tbs < 0:
 		pass
 
-func _getObjectWeight(index):
-	var currentWeight
+func _getObjectWeight(weight):
+	var currentWeight = 0
 	
 	for i in range(index):
-		objects[i].weight
+		currentWeight += objects[i].weight
+		if weight < currentWeight:
+			return objects[i]
