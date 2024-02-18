@@ -38,6 +38,7 @@ func _physics_process(delta):
 	
 func gameover():
 	$Label.set_text("Game Over")
+	
 	$Health.Die()
 	position.y= -1
 func respawn():
