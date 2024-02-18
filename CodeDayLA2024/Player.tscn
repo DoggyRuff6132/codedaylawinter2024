@@ -29,3 +29,11 @@ attenuation_model = 3
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_ltiep")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 500.0
+offset_top = 300.0
+offset_right = 587.0
+offset_bottom = 323.0
+text = "
+"
