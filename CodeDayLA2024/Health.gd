@@ -11,9 +11,8 @@ func _ready():
 	currentHealth = maxHealth
 
 func _process(delta):
-	currentHealth -= 1
 	print(currentHealth)
-	if currentHealth < 0 && !dead:
+	if currentHealth < 0:
 		Die()
 
 func TakeDamage(damage : int):
@@ -22,6 +21,7 @@ func TakeDamage(damage : int):
 		Die()
 
 func Die():
-	print("died")
-	dieSound.play()
-	dead = true
+	if !dead:
+		print("died")
+		dieSound.play()
+		dead = true

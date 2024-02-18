@@ -33,3 +33,4 @@ transform = Transform3D(1, 0, 0, 0, 0.914882, 0.403721, 0, -0.403721, 0.914882, 
 transform = Transform3D(1, 0, 0, 0, 0.914882, 0.403721, 0, -0.403721, 0.914882, 0, 2.40261, 2.39791)
 
 [node name="Spawner" parent="." instance=ExtResource("3_a2qr7")]
+timeBetweenSpawns = 0.7

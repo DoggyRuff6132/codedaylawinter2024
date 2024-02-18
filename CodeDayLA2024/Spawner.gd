@@ -27,7 +27,7 @@ func _process(delta):
 		obj.position = Vector3(rng.randf_range(-5,5),1,-25)
 		
 		t_tbs = timeBetweenSpawns
-		
+	
 
 func _getObjectWeight(weight):
 	var currentWeight = 0
