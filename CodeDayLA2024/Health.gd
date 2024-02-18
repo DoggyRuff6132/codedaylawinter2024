@@ -1,12 +1,16 @@
 extends Node3D
 
+@export var maxHealth : int = 100
+var currentHealth : int = 100
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	currentHealth = maxHealth
 
+func TakeDamage(damage : int):
+	currentHealth -= damage
+	if currentHealth < 0:
+		Die()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	
-	
+func Die():
+	get_parent().queue_free()
