@@ -43,7 +43,7 @@ func gameover():
 	position.y= -1
 func respawn():
 	print("resapwning!")
-	position.z = -1
+	position.z = -1.0
 	lifecount-=1
 	
 
