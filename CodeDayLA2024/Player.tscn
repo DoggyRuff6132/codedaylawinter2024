@@ -35,7 +35,6 @@ attenuation_model = 3
 mesh = SubResource("BoxMesh_ltiep")
 
 [node name="Label" type="Label" parent="."]
-<<<<<<< Updated upstream
 offset_left = 480.0
 offset_top = 320.0
 offset_right = 567.0
@@ -43,11 +42,5 @@ offset_bottom = 580.0
 size_flags_vertical = 6
 theme = SubResource("Theme_hrr1h")
 theme_type_variation = &"HeaderLarge"
-=======
-offset_left = 500.0
-offset_top = 300.0
-offset_right = 620.0
-offset_bottom = 350.0
->>>>>>> Stashed changes
 text = "
 "
