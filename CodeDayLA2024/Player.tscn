@@ -34,7 +34,7 @@ attenuation_model = 3
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_ltiep")
 
-[node name="Label" type="Label" parent="."]
+[node name="GameOverLabel" type="Label" parent="."]
 offset_left = 480.0
 offset_top = 320.0
 offset_right = 567.0
@@ -44,3 +44,7 @@ theme = SubResource("Theme_hrr1h")
 theme_type_variation = &"HeaderLarge"
 text = "
 "
+
+[node name="LifeCounter" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
