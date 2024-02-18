@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://bc4udd5uoi2c6"]
+
+[ext_resource type="Script" path="res://Obstacles/obstacle.gd" id="1_1cy8h"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xe3jd"]
+size = Vector3(9, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t5weg"]
+albedo_color = Color(0.756863, 0.517647, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_oe3mw"]
+material = SubResource("StandardMaterial3D_t5weg")
+size = Vector3(9, 1, 1)
+
+[node name="WallObstacle" type="StaticBody3D"]
+script = ExtResource("1_1cy8h")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 3.22, 0, 0, 0, 1, -6, 0, 0)
+shape = SubResource("BoxShape3D_xe3jd")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 3.22, 0, 0, 0, 1, -6, 0, 0)
+mesh = SubResource("BoxMesh_oe3mw")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 3.22, 0, 0, 0, 1, 6, 0, 0)
+shape = SubResource("BoxShape3D_xe3jd")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 3.22, 0, 0, 0, 1, 6, 0, 0)
+mesh = SubResource("BoxMesh_oe3mw")
+skeleton = NodePath("../MeshInstance3D")

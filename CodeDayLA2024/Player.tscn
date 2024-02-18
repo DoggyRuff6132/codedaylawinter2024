@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b6fhwvgbk3xn8"]
+[gd_scene load_steps=10 format=3 uid="uid://b6fhwvgbk3xn8"]
 
 [ext_resource type="Script" path="res://Health.gd" id="1_hal5y"]
 [ext_resource type="Script" path="res://Player.gd" id="1_ysvpv"]
@@ -15,6 +15,12 @@ material = SubResource("StandardMaterial3D_8j0js")
 [sub_resource type="Theme" id="Theme_hrr1h"]
 default_base_scale = 0.9
 default_font_size = 190
+
+[sub_resource type="LabelSettings" id="LabelSettings_xulp6"]
+font_size = 90
+
+[sub_resource type="LabelSettings" id="LabelSettings_mub0o"]
+font_size = 75
 
 [node name="Player" type="CharacterBody3D"]
 collision_layer = 5
@@ -34,20 +40,29 @@ attenuation_model = 3
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_ltiep")
 
-[node name="Label" type="Label" parent="."]
-<<<<<<< Updated upstream
-offset_left = 480.0
-offset_top = 320.0
-offset_right = 567.0
-offset_bottom = 580.0
+[node name="GameOverLabel" type="Label" parent="."]
+offset_left = 266.0
+offset_top = 208.0
+offset_right = 914.0
+offset_bottom = 468.0
 size_flags_vertical = 6
 theme = SubResource("Theme_hrr1h")
 theme_type_variation = &"HeaderLarge"
-=======
-offset_left = 500.0
-offset_top = 300.0
-offset_right = 620.0
-offset_bottom = 350.0
->>>>>>> Stashed changes
 text = "
 "
+label_settings = SubResource("LabelSettings_xulp6")
+autowrap_mode = 2
+
+[node name="LifeCounter" type="Label" parent="."]
+offset_left = 14.0
+offset_top = 1.0
+offset_right = 54.0
+offset_bottom = 261.0
+label_settings = SubResource("LabelSettings_mub0o")
+
+[node name="GameTime" type="Label" parent="."]
+offset_left = 885.0
+offset_top = 6.0
+offset_right = 1134.0
+offset_bottom = 126.0
+label_settings = SubResource("LabelSettings_mub0o")

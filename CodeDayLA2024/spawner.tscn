@@ -8,12 +8,12 @@
 [sub_resource type="Resource" id="Resource_jpsno"]
 script = ExtResource("3_n5jdq")
 scene = ExtResource("2_433qw")
-weight = 10
+weight = 100
 
 [sub_resource type="Resource" id="Resource_na63f"]
 script = ExtResource("3_n5jdq")
 scene = ExtResource("4_vpm5u")
-weight = 1
+weight = 30
 
 [node name="Spawner" type="Node3D"]
 script = ExtResource("1_rpmq1")
