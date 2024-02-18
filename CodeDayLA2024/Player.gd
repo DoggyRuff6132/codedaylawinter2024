@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 
-const SPEED = 5.0
+const SPEED = 10.0
 const JUMP_VELOCITY = 4.5
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -18,6 +18,7 @@ func _ready():
 func _physics_process(delta):
 	if !lost:
 		gameTime += delta
+		$GameTime.set_text(str(snappedf(gameTime,0.001)))
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta

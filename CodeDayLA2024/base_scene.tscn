@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bnipc4lt3b6af"]
+[gd_scene load_steps=17 format=3 uid="uid://bnipc4lt3b6af"]
 
 [ext_resource type="PackedScene" uid="uid://b6fhwvgbk3xn8" path="res://Player.tscn" id="1_y353s"]
 [ext_resource type="PackedScene" uid="uid://cwdumy82l5nkp" path="res://Obstacles/ball_obstacle.tscn" id="3_1llbe"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://d2o5mes2hlee3" path="res://Obstacles/rectangle_obstacle.tscn" id="5_g8b3f"]
 [ext_resource type="PackedScene" uid="uid://bv2o1wxfrkugs" path="res://Obstacles/moving_obstacle.tscn" id="6_w3lj6"]
 [ext_resource type="PackedScene" uid="uid://bc4udd5uoi2c6" path="res://Obstacles/wall_obstacle.tscn" id="7_7nsk2"]
+[ext_resource type="AudioStream" uid="uid://c1x42op30k4rl" path="res://Audio/Squareway Sliders.ogg" id="8_1f56l"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4yvj8"]
 size = Vector3(10, 0.1, 30)
@@ -32,7 +33,7 @@ weight = 40
 [sub_resource type="Resource" id="Resource_mgxti"]
 script = ExtResource("4_xisvt")
 scene = ExtResource("7_7nsk2")
-weight = 20
+weight = 5
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_7nv76"]
 
@@ -103,3 +104,7 @@ transform = Transform3D(1, 2.13163e-14, 0, 4.26326e-14, 1, -4.26326e-14, 0, -2.1
 material_override = SubResource("StandardMaterial3D_ofarn")
 mesh = SubResource("BoxMesh_nm4wk")
 skeleton = NodePath("")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("8_1f56l")
+autoplay = true
